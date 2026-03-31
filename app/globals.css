@@ -4,9 +4,134 @@
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-cormorant), ui-serif, Georgia, serif;
   --color-accent: #c9a84c;
+  --color-ink: #1a1410;
+  --color-parchment: #f5ead8;
+  --color-gold: #c9a84c;
+  --color-rose: #c07070;
+  --color-game-orange: #F16423;
 }
 
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes ctc-bob {
+  from { transform: translateY(0px); opacity: 1; }
+  to   { transform: translateY(6px); opacity: 0.6; }
+}
+
+@keyframes vn-fadein {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@layer utilities {
+  .vn-textbox {
+    background-image: url('/gui/textbox.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-width: 640px) {
+    .vn-textbox {
+      background-image: url('/gui/phone/textbox.png');
+    }
+  }
+
+  .vn-namebox-underline {
+    display: block;
+    width: min(100%, 250px);
+    height: 6px;
+    background-image: url('/gui/namebox.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-top: 4px;
+  }
+
+  .vn-btn-choice {
+    background-image: url('/gui/button/choice_idle_background.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transition: background-image 80ms step-end, color 80ms ease;
+  }
+
+  .vn-btn-choice:hover,
+  .vn-btn-choice:focus-visible {
+    background-image: url('/gui/button/choice_hover_background.png');
+  }
+
+  @media (max-width: 640px) {
+    .vn-btn-choice {
+      background-image: url('/gui/phone/button/choice_idle_background.png');
+    }
+    .vn-btn-choice:hover,
+    .vn-btn-choice:focus-visible {
+      background-image: url('/gui/phone/button/choice_hover_background.png');
+    }
+  }
+
+  .vn-btn-action {
+    background-image: url('/ui-game-assets/Button01.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-width: 183px;
+    transition: filter 80ms ease;
+  }
+
+  .vn-btn-action:hover,
+  .vn-btn-action:focus-visible {
+    background-image: url('/ui-game-assets/Button02.png');
+    filter: brightness(1.15);
+  }
+
+  .vn-btn-action:disabled {
+    opacity: 0.5;
+    cursor: wait;
+  }
+
+  .vn-ctc {
+    width: 22px;
+    height: 32px;
+    background-image: url('/gui/ctc.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: ctc-bob 1s ease-in-out infinite alternate;
+  }
+
+  .vn-skip {
+    background-image: url('/gui/skip.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transition: filter 80ms ease;
+  }
+
+  .vn-skip:hover {
+    filter: brightness(1.3);
+  }
+
+  .vn-cell {
+    background-image: url('/ui-game-assets/Cell01.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #f5ead8;
+  }
+
+  .vn-quickmenu {
+    background-image: url('/gui/quick_menu.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+
+  .vn-empty-frame {
+    background-image: url('/gui/frame.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .vn-fadein {
+    animation: vn-fadein 0.35s ease-out both;
+  }
 }

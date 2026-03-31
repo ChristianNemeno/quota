@@ -77,12 +77,12 @@ export default async function QuotesPage({ searchParams }: PageProps) {
   return (
     <div className="grid w-full gap-10 lg:grid-cols-[240px_minmax(0,1fr)]">
       <aside className="space-y-4">
-        <div className="space-y-2">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
-            Tags
+        <div className="space-y-1">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#c9a84c]">
+            — Tags —
           </p>
-          <h1 className="text-2xl font-semibold tracking-tight text-neutral-950 dark:text-neutral-50">
-            Browse the quote archive.
+          <h1 className="font-serif text-xl font-semibold italic text-[#1a1410] dark:text-[#f5ead8]">
+            Browse the archive.
           </h1>
         </div>
 
@@ -101,9 +101,10 @@ export default async function QuotesPage({ searchParams }: PageProps) {
             ))}
           </div>
         ) : (
-          <div className="rounded-3xl border border-dashed border-neutral-300 bg-white p-8 text-neutral-600 dark:border-neutral-700 dark:bg-neutral-950 dark:text-neutral-300">
-            No quotes are available yet. Run the Prisma seed to populate the
-            archive.
+          <div className="vn-empty-frame flex min-h-[300px] items-center justify-center p-10">
+            <p className="font-serif italic text-[#c9a84c]/60 text-center">
+              No quotes in the archive yet.
+            </p>
           </div>
         )}
 
@@ -111,30 +112,30 @@ export default async function QuotesPage({ searchParams }: PageProps) {
           {hasPreviousPage ? (
             <Link
               href={`/quotes?page=${currentPage - 1}`}
-              className="rounded-full border border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-900"
+              className="vn-skip inline-block px-6 py-2 text-sm font-medium text-[#f5ead8]"
             >
-              Previous
+              ← Previous
             </Link>
           ) : (
-            <span className="rounded-full border border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-400 dark:border-neutral-800 dark:text-neutral-600">
-              Previous
+            <span className="inline-block cursor-not-allowed px-6 py-2 text-sm font-medium text-[#f5ead8]/30 opacity-40">
+              ← Previous
             </span>
           )}
 
-          <span className="text-sm text-neutral-500 dark:text-neutral-400">
+          <span className="font-serif italic text-sm text-[#c9a84c]">
             Page {currentPage}
           </span>
 
           {hasNextPage ? (
             <Link
               href={`/quotes?page=${currentPage + 1}`}
-              className="rounded-full border border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-900"
+              className="vn-skip inline-block px-6 py-2 text-sm font-medium text-[#f5ead8]"
             >
-              Next
+              Next →
             </Link>
           ) : (
-            <span className="rounded-full border border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-400 dark:border-neutral-800 dark:text-neutral-600">
-              Next
+            <span className="inline-block cursor-not-allowed px-6 py-2 text-sm font-medium text-[#f5ead8]/30 opacity-40">
+              Next →
             </span>
           )}
         </div>

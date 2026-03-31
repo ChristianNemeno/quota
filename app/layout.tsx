@@ -39,7 +39,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={`${cormorant.variable} ${dmSans.variable} ${theme} h-full antialiased`}>
-      <body className="min-h-full bg-neutral-50 font-sans text-neutral-950 dark:bg-neutral-950 dark:text-neutral-50">
+      <body className="min-h-full bg-[#f5ead8] font-sans text-[#1a1410] dark:bg-[#1a1410] dark:text-[#f5ead8]">
         <div className="flex min-h-full flex-col">
           <Navbar />
           <main className="mx-auto flex w-full max-w-6xl flex-1 px-6 py-10">

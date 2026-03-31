@@ -28,16 +28,16 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="border-b border-neutral-200 bg-white/90 backdrop-blur dark:border-neutral-800 dark:bg-neutral-950/90">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
+    <nav className="vn-quickmenu border-b border-[#c9a84c]/20">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-3">
         <Link
           href="/"
-          className="text-lg font-semibold tracking-tight text-neutral-950 dark:text-neutral-50"
+          className="font-serif text-xl font-semibold italic tracking-wide text-[#c9a84c] transition-opacity hover:opacity-80"
         >
           Quota
         </Link>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           {links.slice(1).map((link) => {
             const active = pathname === link.href;
 
@@ -45,10 +45,8 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                  active
-                    ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
-                    : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-900 dark:hover:text-white"
+                className={`vn-btn-choice px-5 py-2 text-sm font-medium ${
+                  active ? "text-[#F16423]" : "text-[#f5ead8]"
                 }`}
               >
                 {link.label}
@@ -59,7 +57,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={toggleTheme}
-            className="rounded-full border border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-900"
+            className="vn-btn-choice px-4 py-2 text-sm font-medium text-[#c9a84c]"
           >
             {isDark ? "Light" : "Dark"}
           </button>

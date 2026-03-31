@@ -65,11 +65,11 @@ export default async function Home() {
   return (
     <div className="flex w-full flex-col gap-10">
       <section className="w-full space-y-4">
-        <div className="space-y-2">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
-            Daily Quote
+        <div className="space-y-1">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#c9a84c]">
+            — Daily Quote —
           </p>
-          <h1 className="text-4xl font-semibold tracking-tight text-neutral-950 dark:text-neutral-50">
+          <h1 className="font-serif text-3xl font-semibold italic text-[#1a1410] dark:text-[#f5ead8]">
             One quote worth sitting with.
           </h1>
         </div>
@@ -77,9 +77,10 @@ export default async function Home() {
         {dailyQuote ? (
           <QuoteCard quote={dailyQuote} />
         ) : (
-          <div className="rounded-3xl border border-dashed border-neutral-300 bg-white p-8 text-neutral-600 dark:border-neutral-700 dark:bg-neutral-950 dark:text-neutral-300">
-            No quotes are available yet. Run the Prisma seed to populate the
-            database.
+          <div className="vn-empty-frame flex min-h-[300px] items-center justify-center p-10">
+            <p className="font-serif italic text-[#c9a84c]/70 text-center">
+              No quotes yet. Run the seed script to begin the story.
+            </p>
           </div>
         )}
       </section>

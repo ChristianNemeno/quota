@@ -10,10 +10,8 @@ export default function TagBadge({ name, active = false, href }: Props) {
   return (
     <Link
       href={href ?? `/tags/${name}`}
-      className={`inline-block rounded-full px-3 py-1 text-xs font-medium transition-colors ${
-        active
-          ? "bg-neutral-800 text-white dark:bg-white dark:text-neutral-900"
-          : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+      className={`vn-cell inline-block px-3 py-1 text-xs font-medium tracking-wide transition-[filter] duration-150 hover:brightness-125 ${
+        active ? "brightness-125 ring-1 ring-[#c9a84c]" : "opacity-90"
       }`}
     >
       {name}

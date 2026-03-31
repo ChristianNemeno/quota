@@ -35,11 +35,11 @@ export default function RandomQuote() {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between gap-4">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
-            Explore
+        <div className="space-y-1">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#c9a84c]">
+            — Explore —
           </p>
-          <h2 className="text-2xl font-semibold tracking-tight text-neutral-950 dark:text-neutral-50">
+          <h2 className="font-serif text-2xl font-semibold italic text-[#1a1410] dark:text-[#f5ead8]">
             Pull a random quote from the collection.
           </h2>
         </div>
@@ -48,7 +48,7 @@ export default function RandomQuote() {
           type="button"
           onClick={handleClick}
           disabled={loading}
-          className="rounded-full bg-neutral-900 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-700 disabled:cursor-wait disabled:opacity-70 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+          className="vn-btn-action px-6 py-2 text-sm font-medium text-[#f5ead8]"
         >
           {loading ? "Loading..." : "Random Quote"}
         </button>
@@ -62,8 +62,10 @@ export default function RandomQuote() {
         {quote ? (
           <QuoteCard quote={quote} />
         ) : (
-          <div className="rounded-3xl border border-dashed border-neutral-300 bg-white p-8 text-neutral-600 dark:border-neutral-700 dark:bg-neutral-950 dark:text-neutral-300">
-            Click the button to load a random quote.
+          <div className="vn-empty-frame flex min-h-[200px] items-center justify-center p-10">
+            <p className="font-serif italic text-[#c9a84c]/60">
+              Click the button to draw a quote…
+            </p>
           </div>
         )}
       </div>
