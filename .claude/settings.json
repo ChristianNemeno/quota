@@ -1,5 +1,6 @@
 {
   "enabledPlugins": {
-    "game-ui-redesign@local": true
+    "game-ui-redesign@local": true,
+    "codex@openai-codex": true
   }
 }
