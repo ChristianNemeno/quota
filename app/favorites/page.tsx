@@ -50,25 +50,29 @@ export default function FavoritesPage() {
 
   if (loading) {
     return (
-      <div className="flex min-h-[60vh] w-full items-center justify-center rounded-3xl border border-neutral-200 bg-white text-neutral-500 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-400">
-        Loading favorites...
+      <div
+        className="flex min-h-[60vh] w-full items-center justify-center px-8 py-10 text-[#f5ead8]/60"
+      >
+        <p className="font-serif italic text-sm">Loading favorites…</p>
       </div>
     );
   }
 
   if (!hasFavorites) {
     return (
-      <div className="flex min-h-[60vh] w-full flex-col items-center justify-center rounded-3xl border border-dashed border-neutral-300 bg-white px-6 text-center dark:border-neutral-700 dark:bg-neutral-950">
+      <div
+        className="flex min-h-[60vh] w-full flex-col items-center justify-center px-8 py-12 text-center"
+      >
         <div className="max-w-xl space-y-4">
-          <h1 className="text-3xl font-semibold tracking-tight text-neutral-950 dark:text-neutral-50">
+          <h1 className="font-serif text-3xl font-semibold italic text-[#f5ead8]">
             No favorites yet.
           </h1>
-          <p className="text-neutral-600 dark:text-neutral-300">
+          <p className="text-sm text-[#f5ead8]/60">
             Browse quotes and double-click any card to save it.
           </p>
           <Link
             href="/quotes"
-            className="inline-flex rounded-full bg-neutral-900 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+            className="vn-btn-choice inline-block px-6 py-2 text-sm font-medium text-[#f5ead8]"
           >
             Browse quotes
           </Link>
@@ -79,11 +83,11 @@ export default function FavoritesPage() {
 
   return (
     <div className="flex h-[calc(100vh-10rem)] min-h-[70vh] w-full flex-col gap-4">
-      <div className="space-y-2">
-        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-500 dark:text-neutral-400">
-          Favorites
+      <div className="space-y-1">
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#c9a84c]">
+          — Favorites —
         </p>
-        <h1 className="text-4xl font-semibold tracking-tight text-neutral-950 dark:text-neutral-50">
+        <h1 className="font-serif text-3xl font-semibold italic text-[#1a1410] dark:text-[#f5ead8]">
           Your saved quotes as a connected map.
         </h1>
       </div>
