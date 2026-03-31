@@ -1,0 +1,36 @@
+# Dependencies
+node_modules
+
+# Build output
+.next
+out
+
+# Git
+.git
+.gitignore
+
+# Environment files (create manually on server)
+.env
+.env.*
+!.env.example
+
+# Documentation
+*.md
+!README.md
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Prisma SQLite (if any)
+prisma/*.db
+prisma/*.db-journal
+
+# Docker
+Dockerfile
+docker-compose.yml
+Caddyfile
