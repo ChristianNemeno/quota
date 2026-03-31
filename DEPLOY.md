@@ -121,10 +121,8 @@ docker compose logs -f
 Run the Prisma schema push (creates tables):
 
 ```bash
-docker compose exec app npx prisma db push
+bash scripts/db-push.sh
 ```
-
-> This downloads the Prisma CLI on first run — it may take a moment.
 
 **Optionally seed with sample quotes:**
 
@@ -169,6 +167,7 @@ docker compose logs caddy | grep -i certificate
 | Script | Purpose |
 |--------|---------|
 | [`scripts/setup-server.sh`](scripts/setup-server.sh) | Initial VM setup: installs Docker |
+| [`scripts/db-push.sh`](scripts/db-push.sh) | Pushes Prisma schema to the database (creates tables) |
 | [`scripts/seed.sh`](scripts/seed.sh) | Seeds the database with sample quotes (⚠️ wipes existing data) |
 
 ---
