@@ -24,6 +24,6 @@ docker run --rm \
   -v "$(pwd)/package-lock.json:/app/package-lock.json:ro" \
   -w /app \
   node:20-alpine \
-  sh -c "npm ci --include=dev --silent && npx prisma generate --silent && npx prisma db push"
+  sh -c "npm ci --include=dev --silent && npx prisma generate && npx prisma db push"
 
 echo "Done."

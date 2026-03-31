@@ -35,6 +35,6 @@ docker run --rm \
   -v "$(pwd)/package-lock.json:/app/package-lock.json:ro" \
   -w /app \
   node:20-alpine \
-  sh -c "npm ci --include=dev --silent && npx prisma generate --silent && npx tsx prisma/seed.ts"
+  sh -c "npm ci --include=dev --silent && npx prisma generate && npx tsx prisma/seed.ts"
 
 echo "Seeding complete."
