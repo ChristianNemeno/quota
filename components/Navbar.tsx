@@ -2,30 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 
 const links = [
-  { href: "/", label: "Quota" },
+  { href: "/", label: "Home" },
   { href: "/quotes", label: "Browse" },
   { href: "/favorites", label: "Favorites" },
 ] as const;
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [isDark, setIsDark] = useState(
-    typeof document !== "undefined" &&
-      document.documentElement.classList.contains("dark"),
-  );
-
-  function toggleTheme() {
-    const nextIsDark = !isDark;
-    const root = document.documentElement;
-
-    root.classList.toggle("dark", nextIsDark);
-    localStorage.setItem("theme", nextIsDark ? "dark" : "light");
-    document.cookie = `theme=${nextIsDark ? "dark" : "light"}; path=/; max-age=31536000`;
-    setIsDark(nextIsDark);
-  }
 
   return (
     <nav className="vn-quickmenu border-b border-[#c9a84c]/20">
@@ -38,7 +23,7 @@ export default function Navbar() {
         </Link>
 
         <div className="flex items-center gap-1">
-          {links.slice(1).map((link) => {
+          {links.map((link) => {
             const active = pathname === link.href;
 
             return (
@@ -53,14 +38,6 @@ export default function Navbar() {
               </Link>
             );
           })}
-
-          <button
-            type="button"
-            onClick={toggleTheme}
-            className="vn-btn-choice px-4 py-2 text-sm font-medium text-[#c9a84c]"
-          >
-            {isDark ? "Light" : "Dark"}
-          </button>
         </div>
       </div>
     </nav>

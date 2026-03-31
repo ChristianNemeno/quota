@@ -94,6 +94,21 @@ export default async function QuotesPage({ searchParams }: PageProps) {
       </aside>
 
       <section className="space-y-8">
+        {/* Double-click hint */}
+        <div className="flex items-center gap-2">
+          <img
+            src="/ui-game-assets/Icon08.png"
+            alt=""
+            aria-hidden="true"
+            className="h-4 w-4 shrink-0 object-contain"
+            style={{ filter: "sepia(1) saturate(3) hue-rotate(-10deg) brightness(1.1)" }}
+          />
+          <p className="text-xs tracking-wide text-[#1a1410]/50 dark:text-[#f5ead8]/40">
+            Double-click any quote card to save it to your favorites
+          </p>
+          <span className="select-none text-[10px] text-[#c9a84c]/40">✦</span>
+        </div>
+
         {quotes.length > 0 ? (
           <div className="grid gap-6">
             {quotes.map((quote) => (

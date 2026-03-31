@@ -64,29 +64,14 @@ export default async function Home() {
 
   return (
     <div className="flex w-full flex-col gap-10">
-      <section className="vn-main-menu w-full space-y-6 rounded-xl px-8 py-10">
+      <section className="w-full space-y-4">
         <div className="space-y-1">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#c9a84c]">
             — Daily Quote —
           </p>
-          <h1 className="font-serif text-3xl font-semibold italic text-[#f5ead8]">
+          <h1 className="font-serif text-3xl font-semibold italic text-[#1a1410] dark:text-[#f5ead8]">
             One quote worth sitting with.
           </h1>
-        </div>
-
-        {/* Static double-click hint — always visible below the heading */}
-        <div className="flex items-center gap-2.5">
-          <img
-            src="/ui-game-assets/Icon08.png"
-            alt=""
-            aria-hidden="true"
-            className="h-5 w-5 shrink-0 object-contain opacity-80"
-            style={{ filter: "sepia(1) saturate(3) hue-rotate(-10deg) brightness(1.1)" }}
-          />
-          <p className="text-xs text-[#f5ead8]/60 tracking-wide">
-            Double-click any quote card to save it to your favorites
-          </p>
-          <span className="text-[#c9a84c]/50 text-xs select-none">✦</span>
         </div>
 
         {dailyQuote ? (
@@ -99,6 +84,21 @@ export default async function Home() {
           </div>
         )}
       </section>
+
+      {/* Double-click hint — between sections, always visible */}
+      <div className="flex items-center justify-center gap-2">
+        <img
+          src="/ui-game-assets/Icon08.png"
+          alt=""
+          aria-hidden="true"
+          className="h-4 w-4 shrink-0 object-contain"
+          style={{ filter: "sepia(1) saturate(3) hue-rotate(-10deg) brightness(1.1)" }}
+        />
+        <p className="text-xs tracking-wide text-[#1a1410]/50 dark:text-[#f5ead8]/40">
+          Double-click any quote card to save it to your favorites
+        </p>
+        <span className="select-none text-[10px] text-[#c9a84c]/40">✦</span>
+      </div>
 
       <section className="w-full">
         <RandomQuote />
