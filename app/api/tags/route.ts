@@ -3,6 +3,8 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import type { TagWithCount } from "@/lib/types";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   const tags = await prisma.tag.findMany({
     include: {
