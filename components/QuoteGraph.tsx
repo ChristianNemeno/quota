@@ -103,7 +103,7 @@ export default function QuoteGraph({ quotes }: Props) {
     <>
       <div
         ref={containerRef}
-        className="h-full min-h-[560px] w-full overflow-hidden rounded-3xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950"
+        className="vn-frame h-full min-h-[560px] w-full overflow-hidden"
       >
         <ForceGraph2D
           graphData={graphData}
@@ -129,15 +129,15 @@ export default function QuoteGraph({ quotes }: Props) {
           onClick={() => setSelectedNode(null)}
         >
           <div
-            className="w-full max-w-2xl rounded-3xl bg-white p-8 shadow-2xl dark:bg-neutral-900"
+            className="vn-frame w-full max-w-2xl p-8"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="space-y-5">
-              <p className="font-serif text-2xl leading-9 text-neutral-950 dark:text-neutral-50">
+              <p className="font-serif text-lg italic leading-8 text-[#f5ead8]">
                 {selectedNode.text}
               </p>
 
-              <p className="text-sm font-medium uppercase tracking-[0.18em] text-neutral-500 dark:text-neutral-400">
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#c9a84c]">
                 {selectedNode.author}
               </p>
 

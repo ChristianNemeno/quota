@@ -26,7 +26,60 @@ html {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes heart-pulse {
+  0%, 100% { filter: drop-shadow(0 0 3px rgba(201, 168, 76, 0.25)); }
+  50%       { filter: drop-shadow(0 0 10px rgba(201, 168, 76, 0.75)); }
+}
+
+@keyframes burst-heart {
+  0%   { opacity: 1; transform: translate(-50%, -50%) scale(0.4); }
+  45%  { opacity: 1; transform: translate(-50%, calc(-50% - 36px)) scale(1.5); }
+  100% { opacity: 0; transform: translate(-50%, calc(-50% - 80px)) scale(0.5); }
+}
+
+@keyframes card-glow-in {
+  from { filter: drop-shadow(0 0 0px rgba(201, 168, 76, 0)); }
+  to   { filter: drop-shadow(0 0 18px rgba(201, 168, 76, 0.45)); }
+}
+
+@keyframes hint-slide-in {
+  from { opacity: 0; transform: translateX(calc(100% + 28px)); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes hint-slide-out {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(calc(100% + 28px)); }
+}
+
+@keyframes badge-pop {
+  0%   { transform: scale(0) rotate(-20deg); opacity: 0; }
+  70%  { transform: scale(1.25) rotate(5deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
 @layer utilities {
+  /* betterTextBox.png: ornate dark panel with gold filigree top/bottom — primary quote card bg */
+  .vn-better-textbox {
+    background-image: url('/gui/betterTextBox.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  /* frame.png: bordered dark panel with corner rivets — use for quote cards */
+  .vn-frame {
+    background-image: url('/gui/frame.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-width: 640px) {
+    .vn-frame {
+      background-image: url('/gui/phone/frame.png');
+    }
+  }
+
+  /* textbox.png: narrow horizontal dialogue strip */
   .vn-textbox {
     background-image: url('/gui/textbox.png');
     background-size: 100% 100%;
@@ -37,6 +90,14 @@ html {
     .vn-textbox {
       background-image: url('/gui/phone/textbox.png');
     }
+  }
+
+  /* main_menu.png: flowing line-art flourish on dark bg — hero section backdrop */
+  .vn-main-menu {
+    background-image: url('/gui/main_menu.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
   }
 
   .vn-namebox-underline {

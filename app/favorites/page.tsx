@@ -64,7 +64,7 @@ export default function FavoritesPage() {
             No favorites yet.
           </h1>
           <p className="text-neutral-600 dark:text-neutral-300">
-            Browse quotes and heart the ones you love.
+            Browse quotes and double-click any card to save it.
           </p>
           <Link
             href="/quotes"

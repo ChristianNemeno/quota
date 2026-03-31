@@ -3,6 +3,7 @@ import { cookies } from "next/headers";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 
 import Navbar from "@/components/Navbar";
+import FavoriteHint from "@/components/FavoriteHint";
 
 import "./globals.css";
 
@@ -46,6 +47,7 @@ export default async function RootLayout({
             {children}
           </main>
         </div>
+        <FavoriteHint />
       </body>
     </html>
   );

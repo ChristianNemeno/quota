@@ -22,10 +22,13 @@ export default function FavoriteButton({ quoteId }: Props) {
       type="button"
       aria-label={label}
       onClick={() => setFavorited(toggleFavorite(quoteId))}
-      className={`inline-flex h-9 w-9 items-center justify-center text-2xl leading-none transition-transform duration-150 hover:scale-125 active:scale-95 ${
+      style={
         favorited
-          ? "text-[#c9a84c] drop-shadow-[0_0_6px_rgba(201,168,76,0.8)]"
-          : "text-[#f5ead8]/40 hover:text-[#c9a84c]/80"
+          ? { filter: "drop-shadow(0 0 6px rgba(201,168,76,0.85))" }
+          : { animation: "heart-pulse 2s ease-in-out infinite" }
+      }
+      className={`inline-flex h-9 w-9 items-center justify-center text-2xl leading-none transition-transform duration-150 hover:scale-125 active:scale-95 ${
+        favorited ? "text-[#c9a84c]" : "text-[#f5ead8]/50 hover:text-[#c9a84c]/80"
       }`}
     >
       <span aria-hidden="true">{favorited ? "♥" : "♡"}</span>
