@@ -46,16 +46,11 @@ export default function QuoteGraph({ quotes }: Props) {
 
     for (let i = 0; i < quotes.length; i += 1) {
       for (let j = i + 1; j < quotes.length; j += 1) {
-        const tagsI = new Set(quotes[i].tags.map((tag) => tag.name));
-        const sharedTags = quotes[j].tags
-          .map((tag) => tag.name)
-          .filter((tag) => tagsI.has(tag));
-
-        if (sharedTags.length > 0) {
+        if (quotes[i].author === quotes[j].author) {
           links.push({
             source: quotes[i].id,
             target: quotes[j].id,
-            sharedTags,
+            sharedTags: [],
           });
         }
       }
